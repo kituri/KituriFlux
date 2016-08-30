@@ -1,0 +1,29 @@
+<resources>
+
+    <!--
+     文案类别前缀规范:
+    报错类: err_
+    提示类: msg_
+    状态类: sta_
+    控件显示:cap_
+-->
+
+    <string name="app_name">KituriFlux</string>
+
+    <!-- 底部栏(tabhost)-->
+    <string name="cap_bb_menu_lessons">我的课程</string>
+    <string name="cap_bb_menu_scheduled">订课</string>
+    <string name="cap_bb_menu_discover">发现</string>
+    <string name="cap_bb_menu_me">个人</string>
+
+    <string name="msg_ui_loading">玩命加载中……</string>
+    <string name="msg_ui_failure">网络似乎出问题了，请稍后再试</string>
+
+    <!-- 登录注册 -->
+    <string name="msg_login_input_your_account_password">请输入您注册时的E-mail帐号及密码</string>
+    <string name="msg_need_login">请登录^_^</string>
+
+    <!-- 测试文字 -->
+    <string name="cap_btn_clear_user">清空用户数据</string>
+
+</resources>

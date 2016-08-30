@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="flux_main_color">#F74C4C</color>
+    <color name="flux_main_text">#282828</color>
+    <color name="flux_main_content">#484848</color>
+    <color name="flux_sub_text_01">#666666</color>
+    <color name="flux_sub_text_02">#A9A9A9</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="windowBackgroundColor">#FFF2EC</color>
+    <color name="transparent">#00000000</color>
+    <color name="refresh_progress_1">#e91e63</color>
+    <color name="refresh_progress_2">#00b0ff</color>
+    <color name="refresh_progress_3">@color/colorPrimary</color>
+</resources>

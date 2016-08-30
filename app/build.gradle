@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.0 rc2"
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    defaultConfig {
+        applicationId "com.flux.kituri.phone"
+        minSdkVersion 21
+        targetSdkVersion 23
+        renderscriptTargetApi 20
+        renderscriptSupportModeEnabled true
+        multiDexEnabled false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        //修改生成的apk名字
+        applicationVariants.all { variant ->
+            variant.outputs.each { output ->
+                def oldFile = output.outputFile
+                if (variant.buildType.name.equals('release')) {
+                    def releaseApkName = 'app_' + variant.productFlavors.get(0).versionName + '_vcode_' + variant.productFlavors.get(0).versionCode + '_release' + '.apk'
+                    output.outputFile = new File(oldFile.parent, releaseApkName)
+                } else if (variant.buildType.name.equals('debug')) {
+                    def debugApkName = 'app_' + variant.productFlavors.get(0).versionName + '_vcode_' + variant.productFlavors.get(0).versionCode + '_debug' + '.apk'
+                    output.outputFile = new File(oldFile.parent, debugApkName)
+                }
+            }
+        }
+
+
+        productFlavors {
+            kituriflux {
+                minSdkVersion 21
+                applicationId 'com.flux.kituri.phone'
+                targetSdkVersion 23
+                versionCode 1
+                versionName '1.0.0'
+            }
+        }
+
+    }
+
+    repositories {
+        flatDir
+                {
+                    dirs 'libs'
+                }
+    }
+
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        compile 'com.android.support:appcompat-v7:23.3.0'
+        compile 'com.android.support:recyclerview-v7:23.2.0'
+        compile 'com.android.support:design:23.2.0'
+        compile 'com.squareup.retrofit2:retrofit:2.0.1'
+        compile 'com.squareup.retrofit2:converter-scalars:2.0.1'
+        compile 'com.google.code.gson:gson:2.6.2'
+        compile 'com.squareup.retrofit2:converter-gson:2.0.1'
+        compile 'com.ashokvarma.android:bottom-navigation-bar:1.1.0'
+        compile 'me.henrytao:smooth-app-bar-layout:0.2.1'
+        compile 'com.facebook.fresco:fresco:0.9.0'
+        compile 'org.greenrobot:eventbus:3.0.0'
+    }
+}
