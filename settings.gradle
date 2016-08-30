@@ -1,0 +1,2 @@
+include ':Flux'
+project(':Flux').projectDir = new File('app')
