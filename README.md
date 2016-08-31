@@ -7,6 +7,8 @@ flux也看了一段时间了，是时候撸个项目模板代码给大家一起�
 
 AndroidFlux项目一览-Flux架构的Android移植
 http://www.jianshu.com/p/896ce1a8e4ed
+AndroidFlux一览
+http://androidflux.github.io/docs/overview.html
 
 项目介绍与剖析：
 
